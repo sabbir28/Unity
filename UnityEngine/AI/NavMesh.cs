@@ -10,11 +10,15 @@ namespace UnityEngine.AI
 	public static class NavMesh
 	{
 		// Token: 0x06001E82 RID: 7810 RVA: 0x00024DAC File Offset: 0x00022FAC
+		// Method marked as required by native code, meaning it must be present for the code to function correctly.
 		[RequiredByNativeCode]
+		// A private static method called internally to trigger the NavMesh pre-update event.
 		private static void Internal_CallOnNavMeshPreUpdate()
 		{
+			// Check if there are any subscribers to the onPreUpdate event.
 			if (NavMesh.onPreUpdate != null)
 			{
+				// Invoke the onPreUpdate event.
 				NavMesh.onPreUpdate();
 			}
 		}
